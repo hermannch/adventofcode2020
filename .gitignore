@@ -1,0 +1,6 @@
+input
+_*
+
+# GO
+# ignore the binaries
+go/day*/day*
