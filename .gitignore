@@ -1,6 +1,7 @@
 input
 _*
 
-# GO
-# ignore the binaries
+# artifacts
+build
+# GO: ignore the binaries
 go/day*/day*
