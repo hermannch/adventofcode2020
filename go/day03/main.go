@@ -46,12 +46,14 @@ func count_trees_hit_with_multiple_slopes(data []string, slopes []Slope) int {
 func main() {
 	fmt.Println("Adventofcode 2020 - day" + day)
 
-	// load data
-	file, err := os.Open("input")
+	// load input data
+	file, err := os.Open("input/day" + day)
 	if err != nil {
 		fmt.Println(err)
+		os.Exit(1)
 	}
 	defer file.Close()
+
 	var data = []string{}
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {

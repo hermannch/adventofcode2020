@@ -3,5 +3,5 @@ _*
 
 # artifacts
 build
-# GO: ignore the binaries
+# GO: ignore the binaries if built in the dir
 go/day*/day*

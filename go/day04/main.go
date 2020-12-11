@@ -204,10 +204,11 @@ func lines_to_passports(lines []string) []passport {
 func main() {
 	fmt.Println("Adventofcode 2020 - day" + day)
 
-	lines, err := file_to_lines("input")
+	// load input data
+	lines, err := file_to_lines("input/day" + day)
 	if err != nil {
 		fmt.Println(err)
-		return
+		os.Exit(1)
 	}
 	data := lines_to_passports(lines)
 	fmt.Println("dim: ", len(data))

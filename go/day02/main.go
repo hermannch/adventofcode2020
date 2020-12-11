@@ -65,9 +65,11 @@ func main() {
 
 	fmt.Println("Adventofcode 2020 - day" + day)
 
-	file, err := os.Open("input")
+	// load input data
+	file, err := os.Open("input/day" + day)
 	if err != nil {
 		fmt.Println(err)
+		os.Exit(1)
 	}
 	defer file.Close()
 

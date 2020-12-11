@@ -69,10 +69,11 @@ func main() {
 	fmt.Println("Adventofcode 2020 - day" + day)
 	sum_target := 2020
 
-	//load values from file
-	file, err := os.Open("input")
+	// load input data
+	file, err := os.Open("input/day" + day)
 	if err != nil {
 		fmt.Println(err)
+		os.Exit(1)
 	}
 	defer file.Close()
 	var data = []int{}
