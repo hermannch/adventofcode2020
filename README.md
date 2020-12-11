@@ -4,7 +4,7 @@ https://adventofcode.com/2020/
 
 ## Build
 
-Put puzzle input into dir `input/{day0,day1,...}`
+Put puzzle input into dir `input/{day01,day02,...}`
 
 ```
 make
