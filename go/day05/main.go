@@ -89,7 +89,7 @@ func get_seat_position(code string) (row, col int) {
 	min_col, max_col := binary_split(0, 7, steps_col)
 
 	if min_row != max_row || min_col != max_col {
-		fmt.Println("Couldn't reduce code: ", code)
+		fmt.Println("Can't reduce code: ", code)
 		os.Exit(1)
 	}
 
@@ -97,8 +97,7 @@ func get_seat_position(code string) (row, col int) {
 }
 
 func main() {
-	fmt.Println("Adventofcode 2020 - day" + day)
-
+	// load input data
 	lines, err := file_to_lines("input/day" + day)
 	if err != nil {
 		fmt.Println(err)
@@ -113,7 +112,6 @@ func main() {
 		seatIDs = append(seatIDs, seatID)
 	}
 	_, maxSeat := max_int(seatIDs)
-	fmt.Println("result part1: ", maxSeat)
 
 	// part02
 	myseat := -1
@@ -127,5 +125,7 @@ func main() {
 			myseat = seat - 1
 		}
 	}
-	fmt.Println("result part2: ", myseat)
+
+	fmt.Println("Adventofcode 2020 - day", day, " part01: ", maxSeat)
+	fmt.Println("Adventofcode 2020 - day", day, " part01: ", myseat)
 }

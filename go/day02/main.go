@@ -62,9 +62,6 @@ func pw_matches_policy2(input DBentry) bool {
 }
 
 func main() {
-
-	fmt.Println("Adventofcode 2020 - day" + day)
-
 	// load input data
 	file, err := os.Open("input/day" + day)
 	if err != nil {
@@ -91,7 +88,6 @@ func main() {
 			invalid1++
 		}
 	}
-	fmt.Println("resut part1: %i", valid1)
 
 	var valid2 int
 	for _, val := range data {
@@ -99,5 +95,7 @@ func main() {
 			valid2++
 		}
 	}
-	fmt.Println("resut part2: %i", valid2)
+
+	fmt.Println("Adventofcode 2020 - day", day, " part01: ", valid1)
+	fmt.Println("Adventofcode 2020 - day", day, " part01: ", valid2)
 }

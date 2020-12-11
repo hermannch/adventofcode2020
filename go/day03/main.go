@@ -44,8 +44,6 @@ func count_trees_hit_with_multiple_slopes(data []string, slopes []Slope) int {
 }
 
 func main() {
-	fmt.Println("Adventofcode 2020 - day" + day)
-
 	// load input data
 	file, err := os.Open("input/day" + day)
 	if err != nil {
@@ -63,7 +61,7 @@ func main() {
 
 	// part01
 	s1 := Slope{3, 1}
-	fmt.Println("result part1: ", count_trees_hit_with_slope(data, s1))
+	result1 := count_trees_hit_with_slope(data, s1)
 
 	// part02
 	s2 := []Slope{
@@ -73,6 +71,8 @@ func main() {
 		Slope{7, 1},
 		Slope{1, 2},
 	}
+	result2 := count_trees_hit_with_multiple_slopes(data, s2)
 
-	fmt.Println("result part2: ", count_trees_hit_with_multiple_slopes(data, s2))
+	fmt.Println("Adventofcode 2020 - day", day, " part01: ", result1)
+	fmt.Println("Adventofcode 2020 - day", day, " part01: ", result2)
 }

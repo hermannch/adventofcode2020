@@ -202,8 +202,6 @@ func lines_to_passports(lines []string) []passport {
 }
 
 func main() {
-	fmt.Println("Adventofcode 2020 - day" + day)
-
 	// load input data
 	lines, err := file_to_lines("input/day" + day)
 	if err != nil {
@@ -211,7 +209,6 @@ func main() {
 		os.Exit(1)
 	}
 	data := lines_to_passports(lines)
-	fmt.Println("dim: ", len(data))
 
 	// part01
 	num_valid_passports1 := 0
@@ -220,7 +217,6 @@ func main() {
 			num_valid_passports1++
 		}
 	}
-	fmt.Println("result part1: ", num_valid_passports1)
 
 	// part02
 	num_valid_passports2 := 0
@@ -229,5 +225,7 @@ func main() {
 			num_valid_passports2++
 		}
 	}
-	fmt.Println("result part2: ", num_valid_passports2)
+
+	fmt.Println("Adventofcode 2020 - day", day, " part01: ", num_valid_passports1)
+	fmt.Println("Adventofcode 2020 - day", day, " part01: ", num_valid_passports2)
 }

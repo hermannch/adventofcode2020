@@ -66,9 +66,6 @@ func Find_sum_of_three(data []int, needle_sum int) (int, int, int, error) {
 }
 
 func main() {
-	fmt.Println("Adventofcode 2020 - day" + day)
-	sum_target := 2020
-
 	// load input data
 	file, err := os.Open("input/day" + day)
 	if err != nil {
@@ -86,13 +83,14 @@ func main() {
 		}
 	}
 
+	sum_target := 2020
+
 	// part1
 	ind1, ind2, err := Find_sum_of_two(data, sum_target)
 	if err != nil {
 		panic(err)
 	}
 	prod2 := int(data[ind1]) * int(data[ind2])
-	fmt.Println("result part1: ", prod2)
 
 	// part2
 	ind1, ind2, ind3, err := Find_sum_of_three(data, sum_target)
@@ -100,5 +98,7 @@ func main() {
 		panic(err)
 	}
 	prod3 := int(data[ind1]) * int(data[ind2]) * int(data[ind3])
-	fmt.Println("result part2: ", prod3)
+
+	fmt.Println("Adventofcode 2020 - day", day, " part01: ", prod2)
+	fmt.Println("Adventofcode 2020 - day", day, " part01: ", prod3)
 }
