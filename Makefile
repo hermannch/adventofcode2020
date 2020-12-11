@@ -6,9 +6,10 @@ GO_BIN := $(patsubst ./go/%, ./build/go/%, $(GO_DIRS))
 all: go
 .PHONY: all
 
-build/go/%: go/%/main.go
-	@mkdir -p build/go
-	ln -s ../../input build/go
+build/go:
+	mkdir -p build/go
+
+build/go/%: build/go go/%/main.go
 	go build -o $@ ./go/$*
 
 go-run: $(GO_BIN)
@@ -19,7 +20,7 @@ go-check: $(GO_SRC)
 	go test $(GO_DIRS)
 .PHONY: go-check
 
-go: $(GO_BIN)
+go: go-check go-run
 .PHONY: go
 
 clean:
